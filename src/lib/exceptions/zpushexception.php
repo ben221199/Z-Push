@@ -22,34 +22,41 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class ZPushException extends Exception {
+use Exception;
+
+class ZPushException extends Exception{
+
     protected $defaultLogLevel = LOGLEVEL_FATAL;
     protected $httpReturnCode = HTTP_CODE_500;
-    protected $httpReturnMessage = "Internal Server Error";
-    protected $httpHeaders = array();
+    protected $httpReturnMessage = 'Internal Server Error';
+    protected $httpHeaders = [];
     protected $showLegal = true;
 
-    public function __construct($message = "", $code = 0, $previous = NULL, $logLevel = false) {
-        if (! $message)
-            $message = $this->httpReturnMessage;
+    public function __construct($message = '', $code = 0, $previous = NULL, $logLevel = false) {
+		if (!$message){
+			$message = $this->httpReturnMessage;
+		}
 
-        if (!$logLevel)
-            $logLevel = $this->defaultLogLevel;
+        if (!$logLevel){
+			$logLevel = $this->defaultLogLevel;
+		}
 
         parent::__construct($message, (int) $code);
         ZLog::Write($logLevel, get_class($this) .': '. $message . ' - code: '.$code. ' - file: '. $this->getFile().':'.$this->getLine(), false);
     }
 
-    public function getHTTPCodeString() {
-        return $this->httpReturnCode . " ". $this->httpReturnMessage;
+    public function getHTTPCodeString(){
+        return $this->httpReturnCode . ' '. $this->httpReturnMessage;
     }
 
-    public function getHTTPHeaders() {
+    public function getHTTPHeaders(){
         return $this->httpHeaders;
     }
 
-    public function showLegalNotice() {
+    public function showLegalNotice(){
         return $this->showLegal;
     }
+
 }

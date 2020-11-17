@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   nohierarchycacheavailableexception.php
+* File      :   NoHierarchyCacheAvailableException.php
 * Project   :   Z-Push
 * Descr     :   Indicates that the HierarchyException is not available.
 *
@@ -22,5 +22,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class NoHierarchyCacheAvailableException extends StateNotFoundException {}
+class NoHierarchyCacheAvailableException extends StateNotFoundException{}

@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   fatalexception.php
+* File      :   FatalException.php
 * Project   :   Z-Push
 * Descr     :   Main class for Fatal Z-Push exceptions
 *               execution stops
@@ -23,5 +23,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class FatalException extends ZPushException {}
+class FatalException extends ZPushException{}

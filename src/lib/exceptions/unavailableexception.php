@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   unavailableexception.php
+* File      :   UnavailableException.php
 * Project   :   Z-Push
 * Descr     :   This is a fatal exception when e.g. a subsystem is not
 *               available. The mobile should retry later.
@@ -23,5 +23,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class UnavailableException extends FatalException {}
+class UnavailableException extends FatalException{}

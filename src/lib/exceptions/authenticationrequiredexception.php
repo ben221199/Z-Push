@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   authenticationrequiredexception.php
+* File      :   AuthenticationRequiredException.php
 * Project   :   Z-Push
 * Descr     :   Exception sending a '401 Unauthorized' to the mobile
 *
@@ -22,11 +22,14 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class AuthenticationRequiredException extends HTTPReturnCodeException {
+class AuthenticationRequiredException extends HTTPReturnCodeException{
+
     protected $defaultLogLevel = LOGLEVEL_INFO;
     protected $httpReturnCode = HTTP_CODE_401;
     protected $httpReturnMessage = "Unauthorized";
     protected $httpHeaders = array('WWW-Authenticate: Basic realm="ZPush"');
     protected $showLegal = true;
+
 }

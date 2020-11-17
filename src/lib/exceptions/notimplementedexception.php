@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   notimplementedexception.php
+* File      :   NotImplementedException.php
 * Project   :   Z-Push
 * Descr     :   Exception indicating that that some code is not
 *               available which is non-fatal
@@ -23,7 +23,10 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class NotImplementedException extends ZPushException {
+class NotImplementedException extends ZPushException{
+
     protected $defaultLogLevel = LOGLEVEL_ERROR;
+
 }

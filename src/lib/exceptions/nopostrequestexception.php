@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   nopostrequestexception.php
+* File      :   NoPostRequestException.php
 * Project   :   Z-Push
 * Descr     :   Exception thrown if the request is not a POST request
 *               The code indicates if the request identified was a OPTIONS or GET request
@@ -23,9 +23,12 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class NoPostRequestException extends FatalException {
+class NoPostRequestException extends FatalException{
+
     const OPTIONS_REQUEST = 1;
     const GET_REQUEST = 2;
     protected $defaultLogLevel = LOGLEVEL_DEBUG;
+
 }

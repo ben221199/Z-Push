@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   statenotfoundexception.php
+* File      :   StateNotFoundException.php
 * Project   :   Z-Push
 * Descr     :   Indicates that a synchronization state could not be retrieved
 *               from an IStateMachine
@@ -23,5 +23,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class StateNotFoundException extends StatusException {}
+class StateNotFoundException extends StatusException{}

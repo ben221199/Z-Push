@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   serviceunavailableexception.php
+* File      :   ServiceUnavailableException.php
 * Project   :   Z-Push
 * Descr     :   Exception sending a '503 Service Unavailable' to the mobile.
 *
@@ -22,18 +22,21 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class ServiceUnavailableException extends HTTPReturnCodeException {
+class ServiceUnavailableException extends HTTPReturnCodeException{
+
 	protected $defaultLogLevel = LOGLEVEL_INFO;
 	protected $httpReturnCode = HTTP_CODE_503;
-	protected $httpReturnMessage = "Service Unavailable";
-	protected $httpHeaders = array();
-	protected $showLegal = false;
+	protected $httpReturnMessage = 'Service Unavailable';
+	protected $httpHeaders = [];
+	protected $showLegal;
 
-	public function __construct($message = "", $code = 0, $previous = NULL, $logLevel = false) {
+	public function __construct($message = '', $code = 0, $previous = NULL, $logLevel = false) {
 		parent::__construct($message, $code, $previous, $logLevel);
 		if (RETRY_AFTER_DELAY !== false) {
 			$this->httpHeaders[] = 'Retry-After: ' . RETRY_AFTER_DELAY;
 		}
 	}
+
 }

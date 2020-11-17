@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   wbxmlexception.php
+* File      :   WBXMLException.php
 * Project   :   Z-Push
 * Descr     :   Exception related to WBXML
 *
@@ -22,5 +22,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class WBXMLException extends FatalNotImplementedException {}
+class WBXMLException extends FatalNotImplementedException{}

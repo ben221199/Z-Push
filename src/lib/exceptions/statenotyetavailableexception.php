@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   statenotyetavailableexception.php
+* File      :   StateNotYetAvailableException.php
 * Project   :   Z-Push
 * Descr     :   Indicates that a state was not yet loaded
 *
@@ -22,5 +22,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class StateNotYetAvailableException extends StatusException {}
+class StateNotYetAvailableException extends StatusException{}

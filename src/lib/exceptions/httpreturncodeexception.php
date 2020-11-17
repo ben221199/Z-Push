@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   nopostrequestexception.php
+* File      :   HTTPReturnCodeException.php
 * Project   :   Z-Push
 * Descr     :   Exception thrown to return a an non 200 http return code
 *               to the mobile
@@ -23,14 +23,18 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class HTTPReturnCodeException extends FatalException {
+class HTTPReturnCodeException extends FatalException{
+
     protected $defaultLogLevel = LOGLEVEL_ERROR;
     protected $showLegal = false;
 
-    public function __construct($message = "", $code = 0, $previous = NULL, $logLevel = false) {
-        if ($code)
+    public function __construct($message = '', $code = 0, $previous = NULL, $logLevel = false) {
+        if($code){
             $this->httpReturnCode = $code;
+        }
         parent::__construct($message, (int) $code, $previous, $logLevel);
     }
+
 }

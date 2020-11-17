@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   fatalnotimplementedexception.php
+* File      :   FatalNotImplementedException.php
 * Project   :   Z-Push
 * Descr     :   Fatal exception related to functionality
 *               which is not available
@@ -23,5 +23,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class FatalNotImplementedException extends FatalException {}
+class FatalNotImplementedException extends FatalException{}

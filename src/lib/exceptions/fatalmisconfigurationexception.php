@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   fatalmisconfigurationexception.php
+* File      :   FatalMisconfigurationException.php
 * Project   :   Z-Push
 * Descr     :   Fatal exception related to configuration
 *
@@ -22,5 +22,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
 class FatalMisconfigurationException extends FatalException {}

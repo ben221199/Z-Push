@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   stateinvalidexception.php
+* File      :   StateInvalidException.php
 * Project   :   Z-Push
 * Descr     :   Indicates that the state is not invalid.
 *
@@ -22,5 +22,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class StateInvalidException extends StatusException {}
+class StateInvalidException extends StatusException{}

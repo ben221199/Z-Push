@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   provisioningrequiredexception.php
+* File      :   ProvisioningRequiredException.php
 * Project   :   Z-Push
 * Descr     :   Exception announcing to the mobile that a
 *               provisioning request is required
@@ -23,9 +23,12 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class ProvisioningRequiredException extends HTTPReturnCodeException {
+class ProvisioningRequiredException extends HTTPReturnCodeException{
+
     protected $defaultLogLevel = LOGLEVEL_INFO;
     protected $httpReturnCode = HTTP_CODE_449;
-    protected $httpReturnMessage = "Retry after sending a PROVISION command";
+    protected $httpReturnMessage = 'Retry after sending a PROVISION command';
+
 }

@@ -1,6 +1,6 @@
 <?php
 /***********************************************
-* File      :   syncobjectbrokenexception.php
+* File      :   SyncObjectBrokenException.php
 * Project   :   Z-Push
 * Descr     :   Indicates that an object was identified as broken.
 *               The SyncObject may be available for further analisis
@@ -23,16 +23,17 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
-class SyncObjectBrokenException extends ZPushException {
+class SyncObjectBrokenException extends ZPushException{
+
     protected $defaultLogLevel = LOGLEVEL_WARN;
     private $syncObject;
 
     /**
      * Returns the SyncObject which caused this Exception (if set)
-     *
      * @access public
-     * @return SyncObject
+     * @return SyncObject|false
      */
     public function GetSyncObject() {
         return isset($this->syncObject) ? $this->syncObject : false;
@@ -40,14 +41,13 @@ class SyncObjectBrokenException extends ZPushException {
 
     /**
      * Sets the SyncObject which caused the exception so it can be later retrieved
-     *
      * @param SyncObject    $syncobject
-     *
      * @access public
      * @return boolean
      */
-    public function SetSyncObject($syncobject) {
+    public function SetSyncObject($syncobject){
         $this->syncObject = $syncobject;
         return true;
     }
+
 }
