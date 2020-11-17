@@ -154,31 +154,3 @@ class KoeSignatures {
         return $this->hash;
     }
 }
-
-/**
- * Helper class holding a signature.
- */
-class KoeSignature {
-    public $id;
-    public $name;
-    public $content;
-    public $isHTML;
-
-    /**
-     * Creates a new KoeSignature object from a data array.
-     *
-     * @param string $id
-     * @param array $data
-     *
-     * @access public
-     * @return KoeSignature
-     */
-    public static function GetSignatureFromArray($id, array $data) {
-        $sig = new KoeSignature();
-        $sig->id = $id;
-        $sig->name = $data['name'];
-        $sig->content = $data['content'];
-        $sig->isHTML = (bool) $data['isHTML'];
-        return $sig;
-    }
-}
