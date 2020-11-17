@@ -1,10 +1,10 @@
 <?php
 /***********************************************
-* File      :   AuthenticationRequiredException.php
+* File      :   BodyPreference.php
 * Project   :   Z-Push
-* Descr     :   Exception sending a '401 Unauthorized' to the mobile
+* Descr     :   Holds body preference data
 *
-* Created   :   06.02.2012
+* Created   :   18.04.2012
 *
 * Copyright 2007 - 2016 Zarafa Deutschland GmbH
 *
@@ -22,14 +22,29 @@
 *
 * Consult LICENSE file for details
 ************************************************/
-namespace ZPush\Lib\Exceptions;
+namespace ZPush\Lib\Core;
 
-class AuthenticationRequiredException extends HTTPReturnCodeException{
+class BodyPreference extends StateObject {
+    protected $unsetdata = array(   'truncationsize' => false,
+                                    'allornone' => false,
+                                    'preview' => false,
+                                );
 
-    protected $defaultLogLevel = LOGLEVEL_INFO;
-    protected $httpReturnCode = HTTP_CODE_401;
-    protected $httpReturnMessage = 'Unauthorized';
-    protected $httpHeaders = array('WWW-Authenticate: Basic realm="ZPush"');
-    protected $showLegal = true;
+    /**
+     * expected magic getters and setters
+     *
+     * GetTruncationSize() + SetTruncationSize()
+     * GetAllOrNone() + SetAllOrNone()
+     * GetPreview() + SetPreview()
+     */
 
+    /**
+     * Indicates if this object has values
+     *
+     * @access public
+     * @return boolean
+     */
+    public function HasValues() {
+        return (count($this->data) > 0);
+    }
 }
