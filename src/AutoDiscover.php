@@ -22,30 +22,43 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush;
+
+use AuthenticationRequiredException;
+use Exception;
+use ZPush\Lib\Exceptions\FatalException;
+use ZPush\Lib\Exceptions\ZPushException;
 
 require_once '../vendor/autoload.php';
 require_once 'config.php';
 
-class ZPushAutodiscover {
-    const ACCEPTABLERESPONSESCHEMAMOBILESYNC = 'http://schemas.microsoft.com/exchange/autodiscover/mobilesync/responseschema/2006';
-    const MAXINPUTSIZE = 8192; // Bytes, the autodiscover request shouldn't exceed that value
+class AutoDiscover{
 
-    private static $instance;
+	private static $instance;
 
-    /**
-     * Static method to start the autodiscover process.
-     *
-     * @access public
-     *
-     * @return void
-     */
-    public static function DoZPushAutodiscover() {
-        self::CheckConfig();
+	const ACCEPTABLERESPONSESCHEMAMOBILESYNC = 'http://schemas.microsoft.com/exchange/autodiscover/mobilesync/responseschema/2006';
+	const MAXINPUTSIZE = 8192; // Bytes, the autodiscover request shouldn't exceed that value
+
+	private $config;
+
+	public function __construct($CONFIG){
+		$this->config = $CONFIG;
+	}
+
+	/**
+	 * Static method to start the autodiscover process.
+	 * @access public
+	 * @param array $CONFIG
+	 * @return void
+	 * @throws AuthenticationRequiredException
+	 */
+    public static function doZPushAutoDiscover(array $CONFIG=[]){
+        self::CheckConfig($CONFIG);
         ZLog::Write(LOGLEVEL_DEBUG, '-------- Start ZPushAutodiscover');
         ZLog::Write(LOGLEVEL_INFO, sprintf("Z-Push version='%s'", @constant('ZPUSH_VERSION')));
         // TODO use filterevilinput?
         if (!isset(self::$instance)) {
-            self::$instance = new ZPushAutodiscover();
+            self::$instance = new self($CONFIG);
         }
         if (stripos($_SERVER["REQUEST_METHOD"], "GET") !== false) {
             ZLog::Write(LOGLEVEL_INFO, "ZPushAutodiscover::DoZPushAutodiscover(): GET request for autodiscover.");
@@ -141,7 +154,7 @@ class ZPushAutodiscover {
      * @return SimpleXMLElement
      */
     private function getIncomingXml() {
-        if (isset($_SERVER['CONTENT_LENGTH']) && $_SERVER['CONTENT_LENGTH'] > ZPushAutodiscover::MAXINPUTSIZE) {
+        if (isset($_SERVER['CONTENT_LENGTH']) && $_SERVER['CONTENT_LENGTH'] > self::MAXINPUTSIZE) {
             throw new ZPushException('The request will not be processed as the input exceeds our maximum expected input size.');
         }
 
@@ -149,8 +162,8 @@ class ZPushAutodiscover {
             throw new AuthenticationRequiredException();
         }
 
-        $input = @file_get_contents('php://input', NULL, NULL, 0, ZPushAutodiscover::MAXINPUTSIZE);
-        if (strlen($input) == ZPushAutodiscover::MAXINPUTSIZE) {
+        $input = @file_get_contents('php://input', NULL, NULL, 0, self::MAXINPUTSIZE);
+        if (strlen($input) == self::MAXINPUTSIZE) {
             throw new ZPushException('The request will not be processed as the input exceeds our maximum expected input size.');
         }
 
@@ -173,7 +186,7 @@ class ZPushAutodiscover {
             throw new FatalException('Invalid input XML: no AcceptableResponseSchema.');
         }
 
-        if (strcasecmp($xml->Request->AcceptableResponseSchema, ZPushAutodiscover::ACCEPTABLERESPONSESCHEMAMOBILESYNC) != 0) {
+        if (strcasecmp($xml->Request->AcceptableResponseSchema, self::ACCEPTABLERESPONSESCHEMAMOBILESYNC) != 0) {
             throw new FatalException(sprintf('Request for a responseschema that is not supported (only mobilesync is supported): %s', $xml->Request->AcceptableResponseSchema));
         }
 
@@ -311,17 +324,18 @@ class ZPushAutodiscover {
         }
     }
 
-    public static function CheckConfig() {
-        if (!defined('REAL_BASE_PATH')) {
-            define('REAL_BASE_PATH', str_replace('autodiscover/', '', BASE_PATH));
+    public static function CheckConfig(&$CONFIG){
+        if(!isset($CONFIG['REAL_BASE_PATH'])){
+			$CONFIG['REAL_BASE_PATH'] = str_replace('autodiscover/','',$CONFIG['BASE_PATH']);
         }
-        set_include_path(get_include_path() . PATH_SEPARATOR . REAL_BASE_PATH);
+        set_include_path(get_include_path().PATH_SEPARATOR.REAL_BASE_PATH);
 
         // set time zone
         // code contributed by Robert Scheck (rsc)
-        if(defined('TIMEZONE') ? constant('TIMEZONE') : false) {
-            if (! @date_default_timezone_set(TIMEZONE))
-                throw new FatalMisconfigurationException(sprintf("The configured TIMEZONE '%s' is not valid. Please check supported timezones at http://www.php.net/manual/en/timezones.php", constant('TIMEZONE')));
+        if(isset($CONFIG['TIMEZONE'])?'TIMEZONE':false){
+			if(!@date_default_timezone_set(TIMEZONE)) {
+				throw new FatalMisconfigurationException(sprintf("The configured TIMEZONE '%s' is not valid. Please check supported timezones at http://www.php.net/manual/en/timezones.php", constant('TIMEZONE')));
+			}
         }
         else if(!ini_get('date.timezone')) {
             date_default_timezone_set('Europe/Amsterdam');
@@ -382,6 +396,5 @@ class ZPushAutodiscover {
             define('LOGBACKEND_CLASS', LOGBACKEND);
         }
     }
-}
 
-ZPushAutodiscover::DoZPushAutodiscover();
+}
