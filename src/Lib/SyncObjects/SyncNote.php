@@ -26,6 +26,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 class SyncNote extends SyncObject {
     // Outlook transports note colors as categories

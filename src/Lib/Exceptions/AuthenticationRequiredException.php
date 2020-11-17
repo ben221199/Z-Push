@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
 class AuthenticationRequiredException extends HTTPReturnCodeException {
     protected $defaultLogLevel = LOGLEVEL_INFO;

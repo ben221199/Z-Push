@@ -23,5 +23,6 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
 class StateNotFoundException extends StatusException {}

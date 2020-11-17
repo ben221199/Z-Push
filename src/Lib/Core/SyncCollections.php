@@ -30,6 +30,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Core;
 
 class SyncCollections implements Iterator {
     const ERROR_NO_COLLECTIONS = 1;

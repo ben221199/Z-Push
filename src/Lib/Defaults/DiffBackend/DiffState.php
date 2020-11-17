@@ -29,6 +29,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Defaults\DiffBackend;
 
 class DiffState implements IChanges {
     protected $syncstate;

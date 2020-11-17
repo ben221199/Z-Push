@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Request;
 
 class MeetingResponse extends RequestProcessor {
 

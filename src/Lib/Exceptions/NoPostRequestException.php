@@ -23,6 +23,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
 class NoPostRequestException extends FatalException {
     const OPTIONS_REQUEST = 1;

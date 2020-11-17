@@ -24,6 +24,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Core;
 
 class SyncParameters extends StateObject {
     const DEFAULTOPTIONS = "DEFAULT";

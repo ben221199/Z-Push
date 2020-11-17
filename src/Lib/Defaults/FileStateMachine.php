@@ -26,6 +26,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Defaults;
 
 class FileStateMachine implements IStateMachine {
     const SUPPORTED_STATE_VERSION = IStateMachine::STATEVERSION_02;

@@ -25,6 +25,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 class SyncMailFlags extends SyncObject {
     public $subject;

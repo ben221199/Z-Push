@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Request;
 
 class GetAttachment extends RequestProcessor {
 

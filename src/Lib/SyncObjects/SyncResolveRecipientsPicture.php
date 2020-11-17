@@ -26,6 +26,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 class SyncResolveRecipientsPicture extends SyncObject {
     public $maxsize;

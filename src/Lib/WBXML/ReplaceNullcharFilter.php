@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\WBXML;
 
 class ReplaceNullcharFilter extends php_user_filter {
 

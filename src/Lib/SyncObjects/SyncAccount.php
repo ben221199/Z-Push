@@ -26,6 +26,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 class SyncAccount extends SyncObject {
     public $accountid;

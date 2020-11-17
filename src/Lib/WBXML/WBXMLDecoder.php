@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\WBXML;
 
 class WBXMLDecoder extends WBXMLDefs {
     private $in;

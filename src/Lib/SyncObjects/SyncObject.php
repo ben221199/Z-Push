@@ -27,6 +27,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 abstract class SyncObject extends Streamer {
     const STREAMER_CHECKS = 6;

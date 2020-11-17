@@ -27,6 +27,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 class SyncRightsManagementTemplates extends SyncObject {
 

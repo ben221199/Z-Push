@@ -1060,3 +1060,7 @@ define('AUTODISCOVER_LOGIN_EMAIL', 0);
 define('AUTODISCOVER_LOGIN_NO_DOT', 1);
 define('AUTODISCOVER_LOGIN_F_NO_DOT_LAST', 2);
 define('AUTODISCOVER_LOGIN_F_DOT_LAST', 3);
+
+//namespace ZPush\Lib\Core;
+
+//class ZPushDefs{}

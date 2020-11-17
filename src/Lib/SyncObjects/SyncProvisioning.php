@@ -26,6 +26,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 class SyncProvisioning extends SyncObject {
     //AS 12.0, 12.1 and 14.0 props

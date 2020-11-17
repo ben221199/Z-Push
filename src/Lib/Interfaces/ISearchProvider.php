@@ -23,6 +23,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Interfaces;
 
 interface ISearchProvider {
     const SEARCH_GAL = "GAL";

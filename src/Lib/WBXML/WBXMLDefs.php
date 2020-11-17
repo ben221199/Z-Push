@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\WBXML;
 
 define('EN_TYPE',               1);
 define('EN_TAG',                2);

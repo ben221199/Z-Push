@@ -26,6 +26,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 // Exactly the same as SyncRecurrence, but then with SYNC_POOMTASKS_*
 class SyncTaskRecurrence extends SyncObject {

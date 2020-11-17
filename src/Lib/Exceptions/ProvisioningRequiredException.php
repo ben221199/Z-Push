@@ -23,6 +23,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
 class ProvisioningRequiredException extends HTTPReturnCodeException {
     protected $defaultLogLevel = LOGLEVEL_INFO;

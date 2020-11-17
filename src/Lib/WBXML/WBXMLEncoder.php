@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\WBXML;
 
 class WBXMLEncoder extends WBXMLDefs {
     private $_dtd;

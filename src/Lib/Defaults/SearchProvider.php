@@ -25,6 +25,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Defaults;
 
 /*********************************************************************
  * The SearchProvider is a stub to implement own search funtionality

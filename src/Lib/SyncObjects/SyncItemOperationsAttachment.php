@@ -25,6 +25,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 class SyncItemOperationsAttachment extends SyncObject {
     public $contenttype;

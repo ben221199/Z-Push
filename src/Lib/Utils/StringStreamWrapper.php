@@ -23,6 +23,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Utils;
 
 class StringStreamWrapper {
     const PROTOCOL = "stringstream";

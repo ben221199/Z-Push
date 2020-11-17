@@ -28,6 +28,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Core;
 
 class Streamer implements Serializable {
     const STREAMER_VAR = 1;

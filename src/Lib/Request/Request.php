@@ -23,6 +23,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Request;
 
 class Request {
     const MAXMEMORYUSAGE = 0.9;     // use max. 90% of allowed memory when synching

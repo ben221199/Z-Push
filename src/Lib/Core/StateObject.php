@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Core;
 
 class StateObject implements Serializable {
     private $SO_internalid;

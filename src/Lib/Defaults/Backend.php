@@ -36,6 +36,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Defaults;
 
 abstract class Backend implements IBackend {
     protected $permanentStorage;

@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 *************************************************/
+namespace ZPush\Lib\Core;
 
 class KoeSignatures {
     private $all = array();

@@ -23,6 +23,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
 class SyncObjectBrokenException extends ZPushException {
     protected $defaultLogLevel = LOGLEVEL_WARN;

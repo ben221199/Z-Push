@@ -25,6 +25,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Core;
 
 class TopCollector extends InterProcessData {
     const ENABLEDAT = 2;

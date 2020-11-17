@@ -22,6 +22,9 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
+
+use Exception;
 
 class ZPushException extends Exception {
     protected $defaultLogLevel = LOGLEVEL_FATAL;

@@ -23,6 +23,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Defaults\DiffBackend;
 
 class ImportChangesDiff extends DiffState implements IImportChanges {
     private $folderid;

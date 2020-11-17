@@ -23,7 +23,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
-
+namespace ZPush\Lib\Core;
 
 class ContentParameters extends StateObject {
     protected $unsetdata = array(   'contentclass' => false,

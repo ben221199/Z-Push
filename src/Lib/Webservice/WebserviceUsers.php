@@ -23,6 +23,8 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Webservice;
+
 include ('lib/utils/zpushadmin.php');
 
 class WebserviceUsers {

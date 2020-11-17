@@ -23,6 +23,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
 class HTTPReturnCodeException extends FatalException {
     protected $defaultLogLevel = LOGLEVEL_ERROR;

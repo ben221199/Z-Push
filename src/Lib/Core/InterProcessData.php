@@ -24,6 +24,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Core;
 
 abstract class InterProcessData {
     const CLEANUPTIME = 1;

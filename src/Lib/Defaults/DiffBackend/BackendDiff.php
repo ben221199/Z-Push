@@ -32,6 +32,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Defaults\DiffBackend;
 
 abstract class BackendDiff extends Backend {
     protected $store;

@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Core;
 
 class BodyPreference extends StateObject {
     protected $unsetdata = array(   'truncationsize' => false,

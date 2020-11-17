@@ -26,6 +26,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Interfaces;
 
 interface IBackend {
     const HIERARCHYNOTIFICATION = 'hierarchynotification';

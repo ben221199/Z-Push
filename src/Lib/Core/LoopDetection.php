@@ -27,6 +27,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Core;
 
 class LoopDetection extends InterProcessData {
     const INTERPROCESSLD = "ipldkey";

@@ -27,6 +27,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 class SyncMeetingRequestRecurrence extends SyncObject {
     public $type;

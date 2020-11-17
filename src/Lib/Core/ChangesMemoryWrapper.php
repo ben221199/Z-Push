@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Core;
 
 class ChangesMemoryWrapper extends HierarchyCache implements IImportChanges, IExportChanges {
     const CHANGE = 1;

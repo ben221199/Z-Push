@@ -22,6 +22,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\Exceptions;
 
 class StatusException extends ZPushException {
     protected $defaultLogLevel = LOGLEVEL_INFO;

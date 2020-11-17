@@ -22,6 +22,7 @@
  *
  * Consult LICENSE file for details
  ************************************************/
+namespace ZPush\Lib\Log;
 
 class FileLog extends Log {
 

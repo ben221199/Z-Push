@@ -25,6 +25,7 @@
 *
 * Consult LICENSE file for details
 ************************************************/
+namespace ZPush\Lib\SyncObjects;
 
 class SyncBaseBody extends SyncObject {
     public $type; //Possible types are plain text, html, rtf and mime
